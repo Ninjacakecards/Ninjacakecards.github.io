@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_top">
+
+
+    <style>
+    body{
+    font-family: 'Roboto', sans-serif;
+    width:100%;
+    margin: auto;
+    background-color: #eee;
+    }
+
+    h1{
+    text-align:center;
+    font-size: 3rem;
+    }
+
+    .container{
+    margin:auto;
+    border: 1px solid #FF7B24;
+    padding: 2%;
+    background: #f2ae72;
+    }
+
+    .flex-display{
+    display:flex;
+    }
+
+    .logo{
+    text-align:center;
+    }
+
+    .logo img {
+    width: 50%;
+    }
+
+    .text-header{
+    font-size:16px;
+    width: 75%;
+    margin-bottom: 3%;
+    color: #fff;
+    }
+
+    #ebayPrice::placeholder, #CMPrice::placeholder{
+    color:#eee;
+    }
+
+
+    .margin-top{margin-top:1%;}
+
+    #ebayOutput, #CMOutput{
+    text-align: center;
+    width: 20%;
+    /*margin: auto;*/
+    color:#fff;
+    font-weight: 600;
+    }
+
+    #ebayPrice, #CMPrice{
+    margin-bottom: 5%;
+    padding: 1%;
+    height: 25px;
+    width: 96%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-color: #000;
+    border-radius: 6px;
+    background-color: #ff7b24;
+    color: #fff;
+    opacity: 0.5;
+    }
+
+    .button-container{
+    text-align:center;
+    }
+
+   button {
+    background-color: #f8944b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+    .box-styling{
+    background-color: #f2ae72;
+    border-radius: 5px;
+    padding: 3%;
+    border: 1px solid #fff;
+    height: 2rem;
+    margin: 4% 0;
+    }
+
+
+    </style>
+  </head>
+  <body>
+  <div class="container">
+
+  <div class="logo"><img src="https://i.imgur.com/bURq8gE.jpg"></div>
+
+
+  <section class="margin-top">
+    <div class="text-header">eBay Sell Price</div>
+    <input type="number" id="ebayPrice" tabindex="1" placeholder="eBay Sell Price in £">
+
+
+    <div class="text-header">CM Sell Price</div>
+    <input type="number" id="CMPrice" tabindex="2" placeholder="CM Sell Price in €">
+
+    <div class="button-container">
+    <button onclick="calculateValue()" class="calcButton" type="submit" >Calculate</button>
+    </div>
+    </section>
+
+    <section class="margin-top out-put-area">
+    <div class="flex-display box-styling">
+      <div class="text-header">eBay after fees inc postage: </div>
+      <div id="ebayOutput"></div>
+    </div>
+
+    <div class="flex-display box-styling">
+      <div class="text-header">CM after fees exc postage profit: </div>
+      <div id="CMOutput"></div>
+    </div>
+    </section>
+    </div><!-- .container -->
+
+    <script>
+
+
+    function calculateValue(){
+      var ebayInput = document.getElementById("ebayPrice").value;
+      var CMInput = document.getElementById("CMPrice").value;
+
+      /*FEES VARIABLES*/
+      var ebayFees = 0.876;
+      var CMFees = 0.95;
+      /*FEES VARIABLES*/
+
+      /*CALC VARIABLES*/
+      var ebayCalc;
+      var CMCalc;
+      /*CALC VARIABLES*/
+
+      /*CONVERSION RATE*/
+      var convRate = 0.88;
+      /*CONVERSION RATE*/
+
+      /*POSTAGE AND OTHER FEEES*/
+      var deductFromPrice;
+      var paypalFlat = 0.20;
+      var envelope = 0.04;
+      var toploader = 0.04;
+
+      var comboPrice = paypalFlat + envelope + toploader;
+
+      var underTwenty = 0.50;
+      var underFifty = 1.50;
+      var overFifty = 5;
+      /*POSTAGE AND OTHER FEES*/
+
+
+
+      if(ebayInput < 20 && ebayInput > 0){
+      deductFromPrice = comboPrice + underTwenty;
+      }
+      if(ebayInput >= 20 && ebayInput <= 50){
+      deductFromPrice = comboPrice + underFifty;
+      }
+      if(ebayInput > 50){
+      deductFromPrice = comboPrice + overFifty;
+      }
+
+
+
+      if(ebayInput == 0){
+      document.getElementById("ebayOutput").innerHTML = "";
+      }
+      else{
+      ebayCalc = (ebayFees * ebayInput) - deductFromPrice;
+      ebayCalc = Math.floor(ebayCalc * 100) / 100;
+
+      document.getElementById("ebayOutput").innerHTML = "£" + parseFloat(ebayCalc).toFixed(2);
+      }
+
+
+
+      if(CMInput == 0){
+      document.getElementById("CMOutput").innerHTML = "";
+      }
+      else{
+      CMCalc = ((CMInput * CMFees) * convRate) - (envelope + toploader);
+      CMCalc = Math.floor(CMCalc * 100) / 100;
+
+      document.getElementById("CMOutput").innerHTML = "£" + parseFloat(CMCalc).toFixed(2);
+      }
+
+
+
+    }
+
+    document.onkeydown = function (e) {
+  switch (e.keyCode) {
+    case 13:
+        calculateValue();
+        break;
+    default:
+        return; // Do nothing for the rest
+  }
+};
+
+
+    </script>
+   </body>
+</html>

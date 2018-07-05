@@ -6,6 +6,10 @@ margin: unset!important;
 background-color: #eee;
 }
 
+*{
+font-family: 'Roboto', sans-serif;
+}
+
 h1{
 text-align:center;
 font-size: 3rem;

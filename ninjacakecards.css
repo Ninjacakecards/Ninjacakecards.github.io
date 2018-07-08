@@ -1,7 +1,7 @@
 <style>
 body{
 font-family: 'Roboto', sans-serif;
-width:100%;
+width:100%;  
 margin: unset!important;
 background-color: #f2ae72;
 }
@@ -36,7 +36,7 @@ margin:auto;
 }
 
 .text-header{
-font-size:16px;
+font-size: 2rem;
 width: 75%;
 margin-bottom: 1%;
 color: #fff;
@@ -99,5 +99,16 @@ height: 2rem;
 margin: 4% 0;
 }
 
+.out-put-area {
+    font-size: 2rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+.logo img {
+  width: 60%;
+  }
+  
+}
 
 </style>

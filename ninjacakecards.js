@@ -21,6 +21,7 @@ function calculateValue(){
   var paypalFlat = 0.20;
   var envelope = 0.04;
   var toploader = 0.04;
+  var paypalFlatMicro = 0.05
 
   var comboPrice = paypalFlat + envelope + toploader;
 
@@ -30,8 +31,12 @@ function calculateValue(){
   /*POSTAGE AND OTHER FEES*/
 
 
-
-  if(ebayInput < 20 && ebayInput > 0){
+  if(ebayInput < 10 && ebayInput > 0){
+  var comboPrice = paypalFlatMicro + envelope + toploader;
+  var ebayFees = 0.85
+  deductFromPrice = comboPrice + underTwenty;
+  }
+  if(ebayInput < 20 && ebayInput >= 10){
   deductFromPrice = comboPrice + underTwenty;
   }
   if(ebayInput >= 20 && ebayInput <= 50){

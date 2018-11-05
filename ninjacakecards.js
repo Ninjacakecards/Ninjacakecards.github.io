@@ -75,6 +75,9 @@ function calculateValue(){
 
 }
 
+
+};
+
 document.onkeydown = function (e) {
 switch (e.keyCode) {
 case 13:
@@ -83,7 +86,6 @@ case 13:
 default:
     return; // Do nothing for the rest
 }
-};
 
 var coll = document.getElementsByClassName("collapsible");
 var i;

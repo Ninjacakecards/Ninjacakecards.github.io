@@ -71,6 +71,20 @@ function calculateValue(){
   }
 
  
+
+
+}
+
+document.onkeydown = function (e) {
+switch (e.keyCode) {
+case 13:
+    calculateValue();
+    break;
+default:
+    return; // Do nothing for the rest
+}
+};
+
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
@@ -85,15 +99,3 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-
-}
-
-document.onkeydown = function (e) {
-switch (e.keyCode) {
-case 13:
-    calculateValue();
-    break;
-default:
-    return; // Do nothing for the rest
-}
-};

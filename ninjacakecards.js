@@ -69,14 +69,10 @@ function calculateValue(){
 
   document.getElementById("CMOutput").innerHTML = "£" + parseFloat(CMCalc).toFixed(2);
   }
-
- 
-
-
 }
 
 
-};
+
 
 document.onkeydown = function (e) {
 switch (e.keyCode) {
@@ -85,6 +81,7 @@ case 13:
     break;
 default:
     return; // Do nothing for the rest
+}
 }
 
 var coll = document.getElementsByClassName("collapsible");

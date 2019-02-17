@@ -1,4 +1,6 @@
+function outputSavedExcha(){
 document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate");
+}
 
 function calculateValue(){
   var ebayInput = document.getElementById("ebayPrice").value;

@@ -13,7 +13,7 @@ function calculateValue(){
   /*CALC VARIABLES*/
 
   /*CONVERSION RATE*/
-  var convRate = 0.88;
+  var convRate = 0.87;
   /*CONVERSION RATE*/
 
   /*POSTAGE AND OTHER FEEES*/

@@ -1,3 +1,5 @@
+document.getElementById("savedExcha").innerHTML = localStorage.getItem("custExcha");
+
 function calculateValue(){
   var ebayInput = document.getElementById("ebayPrice").value;
   var CMInput = document.getElementById("CMPrice").value;
@@ -72,9 +74,9 @@ function calculateValue(){
 }
 
 function saveSettings(){
-  var ExchangeInput = document.getElementById("custExcha").value
+  var ExchangeInput = document.getElementById("custExcha").value;
 
-  localStorage.setItem("exchangeRate", ExchangeInput)
+  localStorage.setItem("exchangeRate", ExchangeInput);
 }
 
 document.onkeydown = function (e) {

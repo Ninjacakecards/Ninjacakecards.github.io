@@ -13,7 +13,7 @@ function calculateValue(){
   /*CALC VARIABLES*/
 
   /*CONVERSION RATE*/
-  var convRate = 0.87;
+  var convRate = localStorage.getItem("exchangeRate");
   /*CONVERSION RATE*/
 
   /*POSTAGE AND OTHER FEEES*/
@@ -71,8 +71,11 @@ function calculateValue(){
   }
 }
 
+function saveSettings(){
+  var ExchangeInput = document.getElementById("custExcha").value
 
-
+  localStorage.setItem("exchangeRate", ExchangeInput)
+}
 
 document.onkeydown = function (e) {
 switch (e.keyCode) {

@@ -1,6 +1,6 @@
 body{
 font-family: 'Roboto', sans-serif!important;
-width:100%!important;  
+width:100%!important;
 margin: unset!important;
 background-color: #f2ae72!important;
 }
@@ -72,6 +72,18 @@ opacity: 0.5;
 font-size:2rem;
 }
 
+#custExcha{
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-color: #000;
+  border-radius: 6px;
+  background-color: #ff7b24;
+  color: #fff;
+  opacity: 0.5;
+  font-size:2rem;
+}
+
 .button-container{
 text-align:center;
 }
@@ -131,5 +143,5 @@ margin: 4% 0;
 .logo img {
   width: 60%;
   }
-  
+
 }

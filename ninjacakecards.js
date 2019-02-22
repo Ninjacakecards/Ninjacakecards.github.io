@@ -78,6 +78,8 @@ function saveSettings(){
   var ExchangeInput = document.getElementById("custExcha").value;
 
   localStorage.setItem("exchangeRate", ExchangeInput);
+
+  document.getElementById("savedExcha").innerHTML = localStorage.getItem("exchangeRate")
 }
 
 document.onkeydown = function (e) {

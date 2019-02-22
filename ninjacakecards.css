@@ -41,7 +41,7 @@ margin-bottom: 1%;
 color: #fff;
 }
 
-#ebayPrice::placeholder, #CMPrice::placeholder{
+#ebayPrice::placeholder, #CMPrice::placeholder, #custExcha::placeholder{
 color:#eee;
 }
 

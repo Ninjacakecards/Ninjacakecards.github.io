@@ -6,7 +6,7 @@ function calculateValue(){
   var CMInput = document.getElementById("CMPrice").value;
 
   /*FEES VARIABLES*/
-  var ebayFees = 0.876;
+  var ebayFees = 0.856;
   var CMFees = 0.95;
   /*FEES VARIABLES*/
 
@@ -36,7 +36,7 @@ function calculateValue(){
 
   if(ebayInput < 10 && ebayInput > 0){
   var comboPrice = paypalFlatMicro + envelope + toploader;
-  var ebayFees = 0.85
+  var ebayFees = 0.83
   deductFromPrice = comboPrice + underTwenty;
   }
   if(ebayInput < 20 && ebayInput >= 10){
